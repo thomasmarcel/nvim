@@ -17,6 +17,7 @@ return {
         -- require('learn').definitions(use)
         -- require('notes').definitions(use)
         -- require('notes').mappings()
+        require('animo.debug').definitions(use)
     end,
 
 }

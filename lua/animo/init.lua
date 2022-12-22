@@ -7,7 +7,7 @@ return {
         -- require('copilot').definitions(use)
         require('animo.editor').definitions(use)
         -- require('completion').definitions(use)
-        -- require('navigation').definitions(use)
+        require('animo.navigation').definitions(use)
         require('animo.themes').definitions(use)
         -- require('languages.general').definitions(use)
         -- require('languages.rust').definitions(use)

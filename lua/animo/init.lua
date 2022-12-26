@@ -15,7 +15,12 @@ local function prettify_json()
   vim.api.nvim_command("%!jq .")
 end
 
-vim.api.nvim_set_keymap("n", "<leader>jq", ":call prettify_json()<CR>", {noremap = true})
+local function uglify_json()
+  vim.api.nvim_command("%!jq -c .")
+end
+
+vim.keymap.set("n", "<leader>jq", prettify_json, {noremap = true})
+vim.keymap.set("n", "<leader>ujq", uglify_json, {noremap = true})
 
 return {
     plugins = function(use)

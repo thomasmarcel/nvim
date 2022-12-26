@@ -2,6 +2,15 @@
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Copy to clipboard
+local has_unnamedplus = vim.fn.has("unnamedplus")
+if has_unnamedplus then
+  vim.o.clipboard = "unnamedplus"
+end
+
+vim.api.nvim_buf_set_keymap(0, 'n', 'y', '"+y', {noremap = true, silent = true})
+vim.api.nvim_buf_set_keymap(0, 'n', 'p', '"+p', {noremap = true, silent = true})
+
 return {
     plugins = function(use)
         -- require('copilot').definitions(use)

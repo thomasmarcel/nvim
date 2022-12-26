@@ -11,6 +11,12 @@ end
 vim.api.nvim_buf_set_keymap(0, 'n', 'y', '"+y', {noremap = true, silent = true})
 vim.api.nvim_buf_set_keymap(0, 'n', 'p', '"+p', {noremap = true, silent = true})
 
+local function prettify_json()
+  vim.api.nvim_command("%!jq .")
+end
+
+vim.api.nvim_set_keymap("n", "<leader>jq", ":call prettify_json()<CR>", {noremap = true})
+
 return {
     plugins = function(use)
         -- require('copilot').definitions(use)

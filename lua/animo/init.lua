@@ -22,6 +22,15 @@ end
 vim.keymap.set("n", "<leader>jq", prettify_json, {noremap = true})
 vim.keymap.set("n", "<leader>ujq", uglify_json, {noremap = true})
 
+local function set_json_filetype()
+  if string.match(vim.api.nvim_buf_get_name(0), '%.geojson$') or string.match(vim.api.nvim_buf_get_name(0), '%.json$') then
+    -- vim.filetype('json')
+    vim.api.nvim_buf_set_option(0, 'filetype', 'json')
+  end
+end
+
+vim.api.nvim_create_autocmd({ "BufReadPost" }, { pattern = { "*.geojson", "*.bson" }, callback = set_json_filetype })
+
 return {
     plugins = function(use)
         -- require('copilot').definitions(use)

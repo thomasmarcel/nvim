@@ -5,28 +5,28 @@ vim.o.smartcase = true
 -- Copy to clipboard
 local has_unnamedplus = vim.fn.has("unnamedplus")
 if has_unnamedplus then
-  vim.o.clipboard = "unnamedplus"
+    vim.o.clipboard = "unnamedplus"
 end
 
-vim.api.nvim_buf_set_keymap(0, 'n', 'y', '"+y', {noremap = true, silent = true})
-vim.api.nvim_buf_set_keymap(0, 'n', 'p', '"+p', {noremap = true, silent = true})
+vim.api.nvim_buf_set_keymap(0, 'n', 'y', '"+y', { noremap = true, silent = true })
+vim.api.nvim_buf_set_keymap(0, 'n', 'p', '"+p', { noremap = true, silent = true })
 
 local function prettify_json()
-  vim.api.nvim_command("%!jq .")
+    vim.api.nvim_command("%!jq .")
 end
 
 local function uglify_json()
-  vim.api.nvim_command("%!jq -c .")
+    vim.api.nvim_command("%!jq -c .")
 end
 
-vim.keymap.set("n", "<leader>jq", prettify_json, {noremap = true})
-vim.keymap.set("n", "<leader>ujq", uglify_json, {noremap = true})
+vim.keymap.set("n", "<leader>jq", prettify_json, { noremap = true })
+vim.keymap.set("n", "<leader>ujq", uglify_json, { noremap = true })
 
 local function set_json_filetype()
-  if string.match(vim.api.nvim_buf_get_name(0), '%.geojson$') or string.match(vim.api.nvim_buf_get_name(0), '%.json$') then
-    -- vim.filetype('json')
-    vim.api.nvim_buf_set_option(0, 'filetype', 'json')
-  end
+    if string.match(vim.api.nvim_buf_get_name(0), '%.geojson$') or string.match(vim.api.nvim_buf_get_name(0), '%.json$') then
+        -- vim.filetype('json')
+        vim.api.nvim_buf_set_option(0, 'filetype', 'json')
+    end
 end
 
 vim.api.nvim_create_autocmd({ "BufReadPost" }, { pattern = { "*.geojson", "*.bson" }, callback = set_json_filetype })
@@ -36,6 +36,8 @@ function Format()
 end
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, callback = Format })
+
+-- vim.keymap.set("n", "<leader>e", vim.lsp.diagnostic.show_line_diagnostics, { noremap = true, silent = true })
 
 return {
     plugins = function(use)

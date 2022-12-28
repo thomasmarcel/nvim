@@ -31,6 +31,12 @@ end
 
 vim.api.nvim_create_autocmd({ "BufReadPost" }, { pattern = { "*.geojson", "*.bson" }, callback = set_json_filetype })
 
+function Format()
+    vim.lsp.buf.format(nil, 100)
+end
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, callback = Format })
+
 return {
     plugins = function(use)
         -- require('copilot').definitions(use)

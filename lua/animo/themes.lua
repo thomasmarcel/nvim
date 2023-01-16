@@ -1,58 +1,68 @@
 return {
     definitions = function(use)
-  use {"preservim/vim-thematic"}
+        use { "preservim/vim-thematic" }
 
-  use 'danilo-augusto/vim-afterglow'
-  use {'high-moctane/anthraxylon', branch = 'main' }
-  use {
-    'ayu-theme/ayu-vim',
-    config = function()
-      -- light, mirage, dark
-      vim.cmd([[ let ayucolor="mirage" ]])
-    end
-  }
-  use {
-    "catppuccin/nvim",
-    as = "catppuccin",
-    config = function()
-      -- latte, frappe, macchiato, mocha
-      vim.g.catppuccin_flavour = "frappe"
-      require("catppuccin").setup()
-    end
-  }
-  use {'dracula/vim', as = 'dracula' }
-  use {'embark-theme/vim', as = 'embark', branch = 'main' }
-  use 'kkga/vim-envy'
-  use "rebelot/kanagawa.nvim"
-  use 'jonathanfilip/vim-lucius'
-  use {'kaicataldo/material.vim', branch = 'main' }
-  use 'savq/melange'
-  use 'ishan9299/modus-theme-vim'
-  use 'fxn/vim-monochrome'
-  use "EdenEast/nightfox.nvim"
-  use 'haishanh/night-owl.vim'
-  use {'pbrisbin/vim-colors-off', branch = 'main' }
-  use 'drewtempelmeyer/palenight.vim'
-  use 'HenryNewcomer/vim-theme-papaya'
-  use 'reedes/vim-colors-pencil'
-  use 'matsuuu/pinkmare'
-  use 'andreypopp/vim-colors-plain'
-  use 'KKPMW/sacredforest-vim'
-  use 'altercation/vim-colors-solarized'
-  use 'lifepillar/vim-solarized8'
-  use 'jacoborus/tender.vim'
-  use {
-    'ghifarit53/tokyonight-vim',
-    config = function()
-      -- night, storm
-      vim.cmd([[ 
+        use 'danilo-augusto/vim-afterglow'
+        use { 'high-moctane/anthraxylon', branch = 'main' }
+        use {
+            'ayu-theme/ayu-vim',
+            config = function()
+                -- light, mirage, dark
+                vim.cmd([[ let ayucolor="mirage" ]])
+            end
+        }
+        use {
+            "catppuccin/nvim",
+            as = "catppuccin",
+            config = function()
+                -- latte, frappe, macchiato, mocha
+                vim.g.catppuccin_flavour = "frappe"
+                require("catppuccin").setup()
+            end
+        }
+        use { 'dracula/vim', as = 'dracula' }
+        use { 'embark-theme/vim', as = 'embark', branch = 'main' }
+        use 'kkga/vim-envy'
+        use "rebelot/kanagawa.nvim"
+        use 'jonathanfilip/vim-lucius'
+        use { 'kaicataldo/material.vim', branch = 'main' }
+        use 'savq/melange'
+        use 'ishan9299/modus-theme-vim'
+        use 'fxn/vim-monochrome'
+        use "EdenEast/nightfox.nvim"
+        use 'haishanh/night-owl.vim'
+        use { 'pbrisbin/vim-colors-off', branch = 'main' }
+        use 'drewtempelmeyer/palenight.vim'
+        use 'HenryNewcomer/vim-theme-papaya'
+        use 'reedes/vim-colors-pencil'
+        use 'matsuuu/pinkmare'
+        use 'andreypopp/vim-colors-plain'
+        use 'KKPMW/sacredforest-vim'
+        use 'altercation/vim-colors-solarized'
+        use 'lifepillar/vim-solarized8'
+        use 'jacoborus/tender.vim'
+        use {
+            'ghifarit53/tokyonight-vim',
+            config = function()
+                -- night, storm
+                vim.cmd([[
         let g:tokyonight_style = 'storm'
         let g:tokyonight_enable_italic = 1
-      ]])
-    end
-  }
+      ]]         )
+            end
+        }
 
-vim.cmd([[
+        use {
+            "jesseleite/nvim-noirbuddy",
+            requires = { "tjdevries/colorbuddy.nvim", branch = "dev" },
+            config = function()
+                require('noirbuddy').setup {
+                    preset = 'miami-nights',
+                }
+            end
+        }
+
+        vim.cmd([[
 let g:thematic#themes = {
 \ 'afterglow'  : {
 \                  'typeface': 'FuraCode Nerd Font Mono Light',
@@ -86,6 +96,8 @@ let g:thematic#themes = {
 \ 'nightfox'  : {
 \                },
 \ 'night-owl'  : {
+\                },
+\ 'noirbuddy'  : {
 \                },
 \ 'off'  : {
 \                  'typeface': 'Cascadia Code Regular',
@@ -145,6 +157,6 @@ let g:thematic#defaults = {
 \ }
 
 let g:thematic#theme_name = 'catppuccin'
-]])
-	end,
+]]       )
+    end,
 }

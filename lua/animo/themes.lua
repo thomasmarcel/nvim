@@ -41,16 +41,7 @@ return {
         use 'altercation/vim-colors-solarized'
         use 'lifepillar/vim-solarized8'
         use 'jacoborus/tender.vim'
-        use {
-            'ghifarit53/tokyonight-vim',
-            config = function()
-                -- night, storm
-                vim.cmd([[
-        let g:tokyonight_style = 'storm'
-        let g:tokyonight_enable_italic = 1
-      ]]         )
-            end
-        }
+        use 'folke/tokyonight.nvim'
 
         use {
             "jesseleite/nvim-noirbuddy",
@@ -142,6 +133,14 @@ let g:thematic#themes = {
 \ 'tender'  : {
 \                },
 \ 'tokyonight'  : {
+\                },
+\ 'tokyonight-night'  : {
+\                },
+\ 'tokyonight-storm'  : {
+\                },
+\ 'tokyonight-day'  : {
+\                },
+\ 'tokyonight-moon'  : {
 \                },
 \ }
 

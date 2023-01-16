@@ -29,7 +29,10 @@ return {
         use 'savq/melange'
         use 'ishan9299/modus-theme-vim'
         use 'fxn/vim-monochrome'
+        use { 'bluz71/vim-moonfly-colors', branch = 'cterm-compat' }
+        use 'bluz71/vim-nightfly-colors'
         use "EdenEast/nightfox.nvim"
+        use { 'nyoom-engineering/oxocarbon.nvim' }
         use 'haishanh/night-owl.vim'
         use { 'pbrisbin/vim-colors-off', branch = 'main' }
         use 'drewtempelmeyer/palenight.vim'
@@ -84,7 +87,11 @@ let g:thematic#themes = {
 \                },
 \ 'monochrome'  : {
 \                },
+\ 'moonfly'  : {
+\                },
 \ 'nightfox'  : {
+\                },
+\ 'nightfly'  : {
 \                },
 \ 'night-owl'  : {
 \                },
@@ -92,6 +99,8 @@ let g:thematic#themes = {
 \                },
 \ 'off'  : {
 \                  'typeface': 'Cascadia Code Regular',
+\                },
+\ 'oxocarbon'  : {
 \                },
 \ 'palenight'  : {
 \                },

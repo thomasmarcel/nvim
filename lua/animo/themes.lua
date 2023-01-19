@@ -12,6 +12,10 @@ return {
             end
         }
         use {
+            'uloco/bluloco.nvim',
+            requires = { 'rktjmp/lush.nvim' }
+        }
+        use {
             "catppuccin/nvim",
             as = "catppuccin",
             config = function()
@@ -24,6 +28,13 @@ return {
         use { 'embark-theme/vim', as = 'embark', branch = 'main' }
         use 'kkga/vim-envy'
         use "rebelot/kanagawa.nvim"
+        use { 'gzagatti/vim-leuven-theme',
+            config = function()
+                vim.opt.termguicolors = true
+                vim.opt.guicursor = 'a:blinkon0-Cursor,i-ci:ver100'
+                -- vim.cmd([[ colorscheme leuven ]])
+            end
+        }
         use 'jonathanfilip/vim-lucius'
         use { 'kaicataldo/material.vim', branch = 'main' }
         use 'savq/melange'
@@ -36,6 +47,7 @@ return {
         use 'haishanh/night-owl.vim'
         use { 'pbrisbin/vim-colors-off', branch = 'main' }
         use 'drewtempelmeyer/palenight.vim'
+        use 'JoosepAlviste/palenightfall.nvim'
         use 'HenryNewcomer/vim-theme-papaya'
         use 'reedes/vim-colors-pencil'
         use 'matsuuu/pinkmare'
@@ -65,6 +77,8 @@ let g:thematic#themes = {
 \                },
 \ 'ayu'  : {
 \                },
+\ 'bluloco'  : {
+\                },
 \ 'catppuccin'  : {
 \                },
 \ 'dracula'  : {
@@ -73,6 +87,8 @@ let g:thematic#themes = {
 \ 'embark'  : {
 \                },
 \ 'kanagawa'  : {
+\                },
+\ 'leuven'  : {
 \                },
 \ 'lucius'  : {
 \                },
@@ -103,6 +119,8 @@ let g:thematic#themes = {
 \ 'oxocarbon'  : {
 \                },
 \ 'palenight'  : {
+\                },
+\ 'palenightfall'  : {
 \                },
 \ 'papaya'  : {
 \                  'typeface': 'FuraCode Nerd Font Mono Light',

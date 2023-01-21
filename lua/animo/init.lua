@@ -89,6 +89,7 @@ return {
         -- require('notes').definitions(use)
         -- require('notes').mappings()
         require('animo.debug').definitions(use)
+        require('animo.git').definitions(use)
     end,
 
 }

@@ -81,7 +81,7 @@ return {
         require('animo.navigation').definitions(use)
         require('animo.themes').definitions(use)
         -- require('languages.general').definitions(use)
-        -- require('languages.rust').definitions(use)
+        require('animo.languages.rust').definitions(use)
         -- require('languages.javascript').definitions(use)
         -- require('languages.python')
         -- require('languages.jupyter').definitions(use)
@@ -90,6 +90,6 @@ return {
         -- require('notes').mappings()
         require('animo.debug').definitions(use)
         -- require('animo.writing').definitions(use)
+        require('animo.git').definitions(use)
     end,
-
 }

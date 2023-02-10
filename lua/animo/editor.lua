@@ -108,6 +108,13 @@ return {
             requires = "nvim-tree/nvim-web-devicons",
             config = function()
                 require("trouble").setup {
+
+        use {
+            "folke/which-key.nvim",
+            config = function()
+                vim.o.timeout = true
+                vim.o.timeoutlen = 300
+                require("which-key").setup {
                     -- your configuration comes here
                     -- or leave it empty to use the default settings
                     -- refer to the configuration section below
@@ -115,5 +122,17 @@ return {
             end
         }
 
+<<<<<<< HEAD
+=======
+        use {
+            "EtiamNullam/deferred-clipboard.nvim",
+            config = function()
+                require("deferred-clipboard").setup({
+                    fallback = 'unnamedplus', -- or your preferred setting for clipboard
+                    lazy = true,
+                })
+            end
+        }
+>>>>>>> 60e167438d9a439076f4ff179269bb4afc9d6240
     end,
 }

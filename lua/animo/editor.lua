@@ -107,7 +107,9 @@ return {
             "folke/trouble.nvim",
             requires = "nvim-tree/nvim-web-devicons",
             config = function()
-                require("trouble").setup {
+                require("trouble").setup {} -- no need to specify any options
+            end
+        }
 
         use {
             "folke/which-key.nvim",
@@ -122,8 +124,6 @@ return {
             end
         }
 
-<<<<<<< HEAD
-=======
         use {
             "EtiamNullam/deferred-clipboard.nvim",
             config = function()
@@ -133,6 +133,5 @@ return {
                 })
             end
         }
->>>>>>> 60e167438d9a439076f4ff179269bb4afc9d6240
     end,
 }

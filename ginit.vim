@@ -1,0 +1,1 @@
+/Users/thomas/.dotfiles/config/nvim/ginit.vim

@@ -1,9 +1,11 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
+require('animo').bootstrap()
+
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 
-return require('packer').startup(function(use)
+return require('packer').startup({ function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -20,6 +22,19 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
+
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                icons = false,
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
+
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("nvim-treesitter/playground")
@@ -58,4 +73,8 @@ return require('packer').startup(function(use)
     use("laytan/cloak.nvim")
 
     require('animo').plugins(use)
-end)
+
+end,
+    config = {
+        max_jobs = 8,
+    } })

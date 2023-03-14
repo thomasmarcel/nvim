@@ -74,6 +74,20 @@ vim.keymap.set("n", "<leader>ujq", uglify_json, { noremap = true })
 
 
 return {
+    bootstrap = function()
+        local ensure_packer = function()
+            local fn = vim.fn
+            local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+            if fn.empty(fn.glob(install_path)) > 0 then
+                fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+                vim.cmd [[packadd packer.nvim]]
+                return true
+            end
+            return false
+        end
+
+        local packer_bootstrap = ensure_packer()
+    end,
     plugins = function(use)
         -- require('copilot').definitions(use)
         require('animo.editor').definitions(use)

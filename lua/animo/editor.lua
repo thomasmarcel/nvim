@@ -68,14 +68,6 @@ return {
             end
         }
 
-        use({
-            "ThePrimeagen/refactoring.nvim",
-            requires = {
-                { "nvim-lua/plenary.nvim" },
-                { "nvim-treesitter/nvim-treesitter" },
-            },
-        })
-
         use {
             "phaazon/mind.nvim",
             config = function()
@@ -103,14 +95,6 @@ return {
                 require('gitsigns').setup()
             end
         }
-        use {
-            "folke/trouble.nvim",
-            requires = "nvim-tree/nvim-web-devicons",
-            config = function()
-                require("trouble").setup {} -- no need to specify any options
-            end
-        }
-
         use {
             "folke/which-key.nvim",
             config = function()
